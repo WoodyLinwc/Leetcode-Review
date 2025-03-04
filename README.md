@@ -19,12 +19,8 @@ A command-line tool that helps you practice LeetCode problems by randomly provid
 
 2. Make sure you have Node.js installed on your system.
 
-3. Navigate to the project directory:
-   ```
-   cd leetcode-problem-generator
-   ```
 
-4. The project includes these files:
+3. The project includes these files:
    - `leetcode.js`: The main program
    - `easy.json`: Database of easy problems
    - `medium.json`: Database of medium problems
