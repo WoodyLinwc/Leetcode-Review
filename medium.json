@@ -1,44 +1,50 @@
 [
-    {
-      "id": 53,
-      "title": "Maximum Subarray",
-      "type": "array",
-      "link": "https://leetcode.com/problems/maximum-subarray/"
-    },
-    {
-      "id": 3,
-      "title": "Longest Substring Without Repeating Characters",
-      "type": "string",
-      "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-    },
-    {
-      "id": 146,
-      "title": "LRU Cache",
-      "type": "map",
-      "link": "https://leetcode.com/problems/lru-cache/"
-    },
-    {
-      "id": 200,
-      "title": "Number of Islands",
-      "type": "graph",
-      "link": "https://leetcode.com/problems/number-of-islands/"
-    },
-    {
-      "id": 322,
-      "title": "Coin Change",
-      "type": "dynamic-programming",
-      "link": "https://leetcode.com/problems/coin-change/"
-    },
-    {
-      "id": 128,
-      "title": "Longest Consecutive Sequence",
-      "type": "set",
-      "link": "https://leetcode.com/problems/longest-consecutive-sequence/"
-    },
-    {
-      "id": 347,
-      "title": "Top K Frequent Elements",
-      "type": "map",
-      "link": "https://leetcode.com/problems/top-k-frequent-elements/"
-    }
-  ]
+  {
+    "id": 3,
+    "title": "Longest Substring Without Repeating Characters",
+    "type": "string",
+    "link": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+  },
+  {
+    "id": 53,
+    "title": "Maximum Subarray",
+    "type": "array",
+    "link": "https://leetcode.com/problems/maximum-subarray/"
+  },
+  {
+    "id": 80,
+    "title": "Remove Duplicates from Sorted Array II",
+    "type": "array",
+    "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii"
+  },
+  {
+    "id": 128,
+    "title": "Longest Consecutive Sequence",
+    "type": "set",
+    "link": "https://leetcode.com/problems/longest-consecutive-sequence/"
+  },
+  {
+    "id": 146,
+    "title": "LRU Cache",
+    "type": "map",
+    "link": "https://leetcode.com/problems/lru-cache/"
+  },
+  {
+    "id": 200,
+    "title": "Number of Islands",
+    "type": "graph",
+    "link": "https://leetcode.com/problems/number-of-islands/"
+  },
+  {
+    "id": 322,
+    "title": "Coin Change",
+    "type": "dynamic-programming",
+    "link": "https://leetcode.com/problems/coin-change/"
+  },
+  {
+    "id": 347,
+    "title": "Top K Frequent Elements",
+    "type": "map",
+    "link": "https://leetcode.com/problems/top-k-frequent-elements/"
+  }
+]
