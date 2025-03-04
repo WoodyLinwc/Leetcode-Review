@@ -1,6 +1,6 @@
 # LeetCode Problem Generator
 
-A command-line tool that helps you practice LeetCode problems by randomly providing problems based on difficulty level. The generator maintains separate databases for easy, medium, and hard problems, tracks your progress, and allows you to add new problems. You can add your own preferred problems to these three json files, so you can review them in your ways.
+A command-line tool that helps you practice LeetCode problems by randomly providing problems based on difficulty level. The generator maintains separate databases for easy, medium, and hard problems, tracks your progress, and allows you to add new problems.
 
 ## Features
 
@@ -9,18 +9,23 @@ A command-line tool that helps you practice LeetCode problems by randomly provid
 - 📊 **Progress Tracking**: See how many problems you've viewed in each difficulty
 - ➕ **Add New Problems**: Easily add problems through the command line interface
 - 🗂️ **Organized Storage**: Problems are stored in separate JSON files by difficulty
+- ✅ **Solution Reference**: Mark problems as solved/unsolved and access your solutions when needed
 
 ## Installation
 
 1. Clone this repository or download the files:
    ```
-   git clone https://github.com/WoodyLinwc/Leetcode-Review.git
+   git clone https://github.com/yourusername/leetcode-problem-generator.git
    ```
 
 2. Make sure you have Node.js installed on your system.
 
+3. Navigate to the project directory:
+   ```
+   cd leetcode-problem-generator
+   ```
 
-3. The project includes these files:
+4. The project includes these files:
    - `leetcode.js`: The main program
    - `easy.json`: Database of easy problems
    - `medium.json`: Database of medium problems
@@ -37,6 +42,16 @@ node leetcode.js
 ```
 
 This will prompt you to select a difficulty level (easy, medium, or hard) and then show you a random problem.
+
+### Tracking Your Solutions
+
+After seeing a problem, you'll be asked:
+```
+Did you solve this problem? (y/n):
+```
+
+- If you answer **Yes**: The program will congratulate you and ask what you want to do next
+- If you answer **No**: The program will look for a solution in the `problems/` directory and show it to you if available
 
 ### Getting the Next Problem
 
@@ -100,6 +115,8 @@ The generator supports these problem types:
 - `easy.json`: Contains all easy problems
 - `medium.json`: Contains all medium problems
 - `hard.json`: Contains all hard problems
+- `problems/`: Directory containing your solution files
+  - Each solution is named after the problem (e.g., `two_sum.js`)
 
 ## Customization
 
@@ -107,6 +124,9 @@ You can:
 1. Add more problem types by modifying the `validTypes` array in `leetcode.js`
 2. Pre-populate the JSON files with more problems
 3. Modify the display format in the `getRandomProblem` function
+4. Add your own solutions to the `problems/` directory following the naming convention
+   - Problem titles are converted to filenames by making them lowercase and replacing spaces/special characters with underscores
+   - For example, "Two Sum" becomes `two_sum.js`
 
 ## Example
 
@@ -127,6 +147,11 @@ Link: https://leetcode.com/problems/coin-change/
 Progress: 1/7 problems viewed
 ===============================================
 
+Did you solve this problem? (y/n): n
+
+No solution found for "Coin Change"
+Solutions would be stored at: /path/to/project/problems/coin_change.js
+
 What would you like to do next? (next/add/exit): next
 
 ===============================================
@@ -136,6 +161,10 @@ Type: set
 Link: https://leetcode.com/problems/longest-consecutive-sequence/
 Progress: 2/7 problems viewed
 ===============================================
+
+Did you solve this problem? (y/n): y
+
+Great job solving the problem! 🎉
 
 What would you like to do next? (next/add/exit): 
 ```

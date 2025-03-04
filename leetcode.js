@@ -1,4 +1,22 @@
-const readline = require('readline');
+// Ask what the user wants to do next
+function askForContinue(currentDifficulty = null) {
+  rl.question('What would you like to do next? (next/add/exit): ', (answer) => {
+    const option = answer.toLowerCase();
+    
+    if (option === 'next' || option === 'n') {
+      if (currentDifficulty) {
+        getRandomProblem(currentDifficulty, true); // Get next problem with same difficulty
+      } else {
+        askDifficulty(); // If no current difficulty, ask for one
+      }
+    } else if (option === 'add' || option === 'a') {
+      addNewProblem();
+    } else {
+      console.log('Thank you for using LeetCode Problem Generator. Happy coding!');
+      rl.close();
+    }
+  });
+}const readline = require('readline');
 const fs = require('fs');
 const path = require('path');
 
@@ -142,8 +160,8 @@ function getRandomProblem(difficulty, isNext = false) {
   console.log(`Progress: ${recentProblems[difficulty].size}/${problems.length} problems viewed`);
   console.log('===============================================\n');
   
-  // Pass the current difficulty so we can continue with "next"
-  askForContinue(difficulty);
+  // Ask if they solved it before proceeding
+  askIfSolved(difficulty, selectedProblem);
 }
 
 // Function to add a new problem
@@ -283,23 +301,38 @@ const recentProblems = {
   'hard': new Set()
 };
 
-// Ask what the user wants to do next
-function askForContinue(currentDifficulty = null) {
-  rl.question('What would you like to do next? (next/add/exit): ', (answer) => {
-    const option = answer.toLowerCase();
-    
-    if (option === 'next' || option === 'n') {
-      if (currentDifficulty) {
-        getRandomProblem(currentDifficulty, true); // Get next problem with same difficulty
-      } else {
-        askDifficulty(); // If no current difficulty, ask for one
+// Ask if the user solved the problem
+function askIfSolved(difficulty, selectedProblem) {
+  rl.question('Did you solve this problem? (y/n): ', (answer) => {
+    if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
+      // Check if solutions directory exists, create if it doesn't
+      const solutionsDir = path.join(__dirname, 'solutions');
+      if (!fs.existsSync(solutionsDir)) {
+        fs.mkdirSync(solutionsDir);
+        console.log('Created solutions directory: problems/');
       }
-    } else if (option === 'add' || option === 'a') {
-      addNewProblem();
+      
+      // Format problem name for filename (remove spaces, special chars)
+      const problemFileName = selectedProblem.title.toLowerCase().replace(/[^a-z0-9]/g, '_');
+      const solutionFilePath = path.join(solutionsDir, `${problemFileName}.js`);
+      
+      // Check if a solution file exists for this problem
+      if (fs.existsSync(solutionFilePath)) {
+        console.log(`\nOpening solution for "${selectedProblem.title}":`);
+        console.log('\n--- Solution ---');
+        const solution = fs.readFileSync(solutionFilePath, 'utf8');
+        console.log(solution);
+        console.log('---------------\n');
+      } else {
+        console.log(`\nNo solution found for "${selectedProblem.title}"`);
+        console.log(`Solutions would be stored at: ${solutionFilePath}`);
+      }
     } else {
-      console.log('Thank you for using LeetCode Problem Generator. Happy coding!');
-      rl.close();
+      console.log('\nGreat job solving the problem! 🎉');
     }
+    
+    // Now ask what they want to do next
+    askForContinue(difficulty);
   });
 }
 
