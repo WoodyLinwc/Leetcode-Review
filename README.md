@@ -1,6 +1,6 @@
 # LeetCode Problem Generator
 
-A command-line tool that helps you practice LeetCode problems by randomly providing problems based on difficulty level. The generator maintains separate databases for easy, medium, and hard problems, tracks your progress, and allows you to add new problems.
+A command-line tool that helps you practice LeetCode problems by randomly providing problems based on difficulty level. The generator maintains separate databases for easy, medium, and hard problems, tracks your progress, and allows you to add new problems. You can add your own preferred problems to these three json files, so you can review them in your ways.
 
 ## Features
 
