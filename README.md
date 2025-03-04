@@ -10,26 +10,40 @@ A command-line tool that helps you practice LeetCode problems by randomly provid
 - ➕ **Add New Problems**: Easily add problems through the command line interface
 - 🗂️ **Organized Storage**: Problems are stored in separate JSON files by difficulty
 - ✅ **Solution Reference**: Mark problems as solved/unsolved and access your solutions when needed
+- 📝 **Solution Generator**: Create template files for all your problem solutions with a single command
 
 ## Installation
 
-1. Clone this repository or download the files:
+1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/leetcode-problem-generator.git
+   git clone https://github.com/WoodyLinwc/Leetcode-Review.git
    ```
 
 2. Make sure you have Node.js installed on your system.
 
 3. Navigate to the project directory:
    ```
-   cd leetcode-problem-generator
+   cd Leetcode-Review
    ```
 
 4. The project includes these files:
    - `leetcode.js`: The main program
+   - `generate-solutions.js`: Creates solution templates for all problems
    - `easy.json`: Database of easy problems
    - `medium.json`: Database of medium problems
    - `hard.json`: Database of hard problems
+
+## File Structure
+
+- `leetcode.js`: The main JavaScript file that runs the program
+- `generate-solutions.js`: Tool to generate solution template files
+- `easy.json`: Contains all easy problems
+- `medium.json`: Contains all medium problems
+- `hard.json`: Contains all hard problems
+- `solutions/`: Directory containing your solution files
+  - `easy/`: Solutions for easy problems
+  - `medium/`: Solutions for medium problems
+  - `hard/`: Solutions for hard problems
 
 ## Usage
 
@@ -51,7 +65,7 @@ Did you solve this problem? (y/n):
 ```
 
 - If you answer **Yes**: The program will congratulate you and ask what you want to do next
-- If you answer **No**: The program will look for a solution in the `problems/` directory and show it to you if available
+- If you answer **No**: The program will look for a solution in the `solutions/[difficulty]/` directory and show it to you if available
 
 ### Getting the Next Problem
 
@@ -87,6 +101,19 @@ You'll be guided through entering:
 
 The problem will be saved to the appropriate JSON file based on the difficulty level.
 
+### Generating Solution Templates
+
+To create template files for all problems in your database:
+
+```bash
+node generate-solutions.js
+```
+
+This will:
+1. Create a `solutions/` directory with subdirectories for each difficulty level if they don't exist
+2. Generate solution template files for all problems that don't already have a solution file
+3. Provide a summary of created and existing files
+
 ## Progress Tracking
 
 The program keeps track of which problems you've seen in the current session and shows your progress:
@@ -109,24 +136,35 @@ The generator supports these problem types:
 - dynamic-programming
 - graph
 
-## File Structure
+## Solution Format
 
-- `leetcode.js`: The main JavaScript file that runs the program
-- `easy.json`: Contains all easy problems
-- `medium.json`: Contains all medium problems
-- `hard.json`: Contains all hard problems
-- `problems/`: Directory containing your solution files
-  - Each solution is named after the problem (e.g., `two_sum.js`)
+When you generate solution templates, they follow this structure:
 
-## Customization
+```javascript
+/**
+ * Problem: Two Sum
+ * Difficulty: easy
+ * Link: https://leetcode.com/problems/two-sum/
+ * Type: array
+ * 
+ * Description:
+ * [Add problem description here]
+ *
+ * Example:
+ * [Add example input/output here]
+ */
 
-You can:
-1. Add more problem types by modifying the `validTypes` array in `leetcode.js`
-2. Pre-populate the JSON files with more problems
-3. Modify the display format in the `getRandomProblem` function
-4. Add your own solutions to the `problems/` directory following the naming convention
-   - Problem titles are converted to filenames by making them lowercase and replacing spaces/special characters with underscores
-   - For example, "Two Sum" becomes `two_sum.js`
+/**
+ * Your solution goes here
+ */
+
+// Time Complexity: 
+// Space Complexity: 
+
+// Test cases
+```
+
+Fill in your solutions to build a personal LeetCode solution reference library.
 
 ## Example
 
@@ -150,7 +188,7 @@ Progress: 1/7 problems viewed
 Did you solve this problem? (y/n): n
 
 No solution found for "Coin Change"
-Solutions would be stored at: /path/to/project/problems/coin_change.js
+Solutions would be stored at: /path/to/project/solutions/medium/coin_change.js
 
 What would you like to do next? (next/add/exit): next
 
@@ -168,6 +206,16 @@ Great job solving the problem! 🎉
 
 What would you like to do next? (next/add/exit): 
 ```
+
+## Customization
+
+You can:
+1. Add more problem types by modifying the `validTypes` array in `leetcode.js`
+2. Pre-populate the JSON files with more problems
+3. Modify the display format in the `getRandomProblem` function
+4. Add your own solutions to the appropriate subdirectory in the `solutions/` directory
+   - Problem titles are converted to filenames by making them lowercase and replacing spaces/special characters with underscores
+   - For example, "Two Sum" becomes `two_sum.js` in the `solutions/easy/` directory
 
 ## Contributing
 
