@@ -1,0 +1,38 @@
+[
+    {
+      "id": 23,
+      "title": "Merge k Sorted Lists",
+      "type": "linked-list",
+      "link": "https://leetcode.com/problems/merge-k-sorted-lists/"
+    },
+    {
+      "id": 42,
+      "title": "Trapping Rain Water",
+      "type": "array",
+      "link": "https://leetcode.com/problems/trapping-rain-water/"
+    },
+    {
+      "id": 76,
+      "title": "Minimum Window Substring",
+      "type": "string",
+      "link": "https://leetcode.com/problems/minimum-window-substring/"
+    },
+    {
+      "id": 295,
+      "title": "Find Median from Data Stream",
+      "type": "set",
+      "link": "https://leetcode.com/problems/find-median-from-data-stream/"
+    },
+    {
+      "id": 124,
+      "title": "Binary Tree Maximum Path Sum",
+      "type": "tree",
+      "link": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+    },
+    {
+      "id": 127,
+      "title": "Word Ladder",
+      "type": "graph",
+      "link": "https://leetcode.com/problems/word-ladder/"
+    }
+  ]
