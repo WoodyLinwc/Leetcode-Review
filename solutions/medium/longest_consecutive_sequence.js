@@ -14,8 +14,33 @@
 /**
  * Your solution goes here
  */
+var longestConsecutive = function(nums) {
+    // create set for O(1) lookup
+    let set = new Set(nums);
+    let max = 0;
 
-// Time Complexity: 
-// Space Complexity: 
+    // iterate the set
+    for(let num of set){
+
+        // if num-1 does not exist, meaning it's the first in a sequence
+        if(!set.has(num-1)){
+            let currentNum = num;
+            let currentLength = 1;
+
+            // Count consecutive numbers
+            while(set.has(currentNum+1)){
+                currentNum++;
+                currentLength++;
+            }
+
+            // update the max length
+            max = Math.max(max, currentLength);
+        }
+    }
+    return max;
+};
+
+// Time Complexity: O(n)
+// Space Complexity: O(n) for the set
 
 // Test cases
