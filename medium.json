@@ -24,12 +24,6 @@
     "link": "https://leetcode.com/problems/longest-consecutive-sequence/"
   },
   {
-    "id": 146,
-    "title": "LRU Cache",
-    "type": "map",
-    "link": "https://leetcode.com/problems/lru-cache/"
-  },
-  {
     "id": 200,
     "title": "Number of Islands",
     "type": "graph",
