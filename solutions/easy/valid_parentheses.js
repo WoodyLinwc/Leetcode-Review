@@ -39,7 +39,7 @@ var isValid = function(s) {
     return stack.length === 0;
 };
 
-// Time Complexity: 
-// Space Complexity: 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 
 // Test cases

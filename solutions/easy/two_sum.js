@@ -29,7 +29,7 @@ var twoSum = function(nums, target) {
     return [];
 };
 
-// Time Complexity: 
-// Space Complexity: 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 
 // Test cases

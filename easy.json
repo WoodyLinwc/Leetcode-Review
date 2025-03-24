@@ -6,6 +6,18 @@
     "link": "https://leetcode.com/problems/two-sum/"
   },
   {
+    "id": 9,
+    "title": "Palindrome Number",
+    "type": "string",
+    "link": "https://leetcode.com/problems/palindrome-number/"
+  },
+  {
+    "id": 14,
+    "title": "Longest Common Prefix",
+    "type": "array",
+    "link": "https://leetcode.com/problems/longest-common-prefix"
+  },
+  {
     "id": 20,
     "title": "Valid Parentheses",
     "type": "string",
@@ -18,6 +30,12 @@
     "link": "https://leetcode.com/problems/remove-duplicates-from-sorted-array"
   },
   {
+    "id": 27,
+    "title": "Remove Element",
+    "type": "array",
+    "link": "https://leetcode.com/problems/remove-element"
+  },
+  {
     "id": 70,
     "title": "Climbing Stairs",
     "type": "dynamic-programming",
@@ -28,6 +46,12 @@
     "title": "Binary Tree Inorder Traversal",
     "type": "tree",
     "link": "https://leetcode.com/problems/binary-tree-inorder-traversal/"
+  },
+  {
+    "id": 121,
+    "title": "Best Time to Buy and Sell Stock",
+    "type": "array",
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock"
   },
   {
     "id": 141,
